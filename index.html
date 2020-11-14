@@ -176,7 +176,7 @@
                     <th class="tg-rz9m">IPA</th>
                     <th class="tg-rz9m" style="word-break: break-all;">Romanization</th>
                     <th class="tg-rz9m">Font Mapping</th>
-                    <th class="tg-rz9m" colspan="2">Other Versions</th>
+                    <th class="tg-rz9m" colspan="2">Previous Versions</th>
                 </tr>
             </thead>
             <tbody>
@@ -725,7 +725,6 @@
             output.innerHTML = input.value.replace(reg, "<br/>")
         }
         function changeFont() {
-            console.log(fontSelection.selectedIndex)
             let idx = fontSelection.selectedIndex;
             if (idx === 0) {
                 output.style.fontFamily = 'v-zovse'
