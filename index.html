@@ -27,9 +27,9 @@
             background-color: #f2f2f2;
             padding: 20px;
             font-family: v-zovse;
-            font-size: 12pt;
-            color: #222;
-            line-height: 3.2;
+            font-size: 10pt;
+            color: #333;
+            line-height: 2.2;
         }
 
         .fonts {
@@ -107,7 +107,7 @@
 
         @font-face {
             font-family: v-zovse;
-            src: url(font/v-zovse-Regular.otf)
+            src: url(font/v-zovse-Regular.ttf)
         }
 
         @font-face {
@@ -159,24 +159,28 @@
             have undergone iterations of several versions and the original pictographic intention have largely become
             obscured.
         </p>
-        <p>A specimen:</p>
-        <div class="specimen">
-            QeOr QeOr de, DubGRem Qudu lEOge jIOmi leQei devQuarvu.<br />
-            jIOmi deQei Vapenzi Rme.<br />
-            BoOBo lEO DEbi de mimaMe UQu leQei DEbi le.<br />
-            DubGRem Qudu dEOge mige Vapenzi devQuarvujiaO Qu Ue,<br />
-            Vapenzi Vlo Ravuerda guqI ni RiRgu.<br />
-        </div>
+
+        <p>Specimen:</p>
+        <p id="output" class="specimen">sduava seqina?</p>
+
+        <textarea id="input" oninput="render()"
+            style="min-width:100%; max-width:100%; box-sizing: border-box; min-height:110px; font-size: 11pt;padding:10px"
+            spellcheck="false" autocapitalize="false">QeOr QeOr de, DubGRem QuDu lEOge jIOmi leQei devQuarvu.
+jIOmi deQei Vapenzi Rme.
+BoOBo lEO DEbi de mimaMe UQu leQei DEbi le.
+DubGRem QuDu dEOge mige Vapenzi devQuarvujiaO Qu Ue,
+Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
+
         <h2>Letters:</h2>
 
         <table class="tg">
             <thead>
                 <tr>
                     <th class="tg-rz9m">Letter</th>
-                    <th class="tg-rz9m">IPA</th>
+                    <th class="tg-rz9m" >IPA</th>
                     <th class="tg-rz9m" style="word-break: break-all;">Romanization</th>
                     <th class="tg-rz9m">Font Mapping</th>
-                    <th class="tg-rz9m" colspan="2">Legacy Versions</th>
+                    <!-- <th class="tg-rz9m" colspan="2">Legacy Versions</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -185,459 +189,459 @@
                     <td class="tg-baqh">p</td>
                     <td class="tg-baqh">b</td>
                     <td class="tg-baqh">b</td>
-                    <td class="tg-baqh p1">b</td>
-                    <td class="tg-baqh p2">b</td>
+                    <!-- <td class="tg-baqh p1">b</td>
+                    <td class="tg-baqh p2">b</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">p</td>
                     <td class="tg-baqh">ph</td>
                     <td class="tg-baqh">p</td>
                     <td class="tg-baqh">p</td>
-                    <td class="tg-baqh p1">p</td>
-                    <td class="tg-baqh p2">p</td>
+                    <!-- <td class="tg-baqh p1">p</td>
+                    <td class="tg-baqh p2">p</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">B</td>
                     <td class="tg-baqh">b</td>
                     <td class="tg-baqh">bb</td>
                     <td class="tg-baqh">B</td>
-                    <td class="tg-baqh p1">B</td>
-                    <td class="tg-baqh p2">B</td>
+                    <!-- <td class="tg-baqh p1">B</td>
+                    <td class="tg-baqh p2">B</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">m</td>
                     <td class="tg-baqh">m</td>
                     <td class="tg-baqh">m</td>
                     <td class="tg-baqh">m</td>
-                    <td class="tg-baqh p1">m</td>
-                    <td class="tg-baqh p2">m</td>
+                    <!-- <td class="tg-baqh p1">m</td>
+                    <td class="tg-baqh p2">m</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">f</td>
                     <td class="tg-baqh">f</td>
                     <td class="tg-baqh">f</td>
                     <td class="tg-baqh">f</td>
-                    <td class="tg-baqh p1">f</td>
-                    <td class="tg-baqh p2">f</td>
+                    <!-- <td class="tg-baqh p1">f</td>
+                    <td class="tg-baqh p2">f</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">w</td>
                     <td class="tg-baqh">w</td>
                     <td class="tg-baqh">w</td>
                     <td class="tg-baqh">w</td>
-                    <td class="tg-baqh p1">w</td>
-                    <td class="tg-baqh p2">w</td>
+                    <!-- <td class="tg-baqh p1">w</td>
+                    <td class="tg-baqh p2">w</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">P</td>
                     <td class="tg-baqh">v</td>
                     <td class="tg-baqh">wf</td>
                     <td class="tg-baqh">P</td>
-                    <td class="tg-baqh p1">P</td>
-                    <td class="tg-baqh p2">P</td>
+                    <!-- <td class="tg-baqh p1">P</td>
+                    <td class="tg-baqh p2">P</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">d</td>
                     <td class="tg-baqh">t</td>
                     <td class="tg-baqh">d</td>
                     <td class="tg-baqh">d</td>
-                    <td class="tg-baqh p1">d</td>
-                    <td class="tg-baqh p2">d</td>
+                    <!-- <td class="tg-baqh p1">d</td>
+                    <td class="tg-baqh p2">d</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">t</td>
                     <td class="tg-baqh">th</td>
                     <td class="tg-baqh">t</td>
                     <td class="tg-baqh">t</td>
-                    <td class="tg-baqh p1">t</td>
-                    <td class="tg-baqh p2">t</td>
+                    <!-- <td class="tg-baqh p1">t</td>
+                    <td class="tg-baqh p2">t</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">D</td>
                     <td class="tg-baqh">d</td>
                     <td class="tg-baqh">dd</td>
                     <td class="tg-baqh">D</td>
-                    <td class="tg-baqh p1">D</td>
-                    <td class="tg-baqh p2">D</td>
+                    <!-- <td class="tg-baqh p1">D</td>
+                    <td class="tg-baqh p2">D</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">n</td>
                     <td class="tg-baqh">n</td>
                     <td class="tg-baqh">n</td>
                     <td class="tg-baqh">n</td>
-                    <td class="tg-baqh p1">n</td>
-                    <td class="tg-baqh p2">n</td>
+                    <!-- <td class="tg-baqh p1">n</td>
+                    <td class="tg-baqh p2">n</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">L</td>
                     <td class="tg-baqh">ɬ</td>
                     <td class="tg-baqh">lh</td>
                     <td class="tg-baqh">L</td>
-                    <td class="tg-baqh p1">L</td>
-                    <td class="tg-baqh p2">L</td>
+                    <!-- <td class="tg-baqh p1">L</td>
+                    <td class="tg-baqh p2">L</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">l</td>
                     <td class="tg-baqh">l</td>
                     <td class="tg-baqh">l</td>
                     <td class="tg-baqh">l</td>
-                    <td class="tg-baqh p1">l</td>
-                    <td class="tg-baqh p2">l</td>
+                    <!-- <td class="tg-baqh p1">l</td>
+                    <td class="tg-baqh p2">l</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">Y</td>
                     <td class="tg-baqh">ɭ/r</td>
                     <td class="tg-baqh">rl</td>
                     <td class="tg-baqh">Y</td>
-                    <td class="tg-baqh p1">Y</td>
-                    <td class="tg-baqh p2">Y</td>
+                    <!-- <td class="tg-baqh p1">Y</td>
+                    <td class="tg-baqh p2">Y</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">g</td>
                     <td class="tg-baqh">k</td>
                     <td class="tg-baqh">g</td>
                     <td class="tg-baqh">g</td>
-                    <td class="tg-baqh p1">g</td>
-                    <td class="tg-baqh p2">g</td>
+                    <!-- <td class="tg-baqh p1">g</td>
+                    <td class="tg-baqh p2">g</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">k</td>
                     <td class="tg-baqh">kh</td>
                     <td class="tg-baqh">k</td>
                     <td class="tg-baqh">k</td>
-                    <td class="tg-baqh p1">k</td>
-                    <td class="tg-baqh p2">k</td>
+                    <!-- <td class="tg-baqh p1">k</td>
+                    <td class="tg-baqh p2">k</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">G</td>
                     <td class="tg-baqh">g</td>
                     <td class="tg-baqh">gg</td>
                     <td class="tg-baqh">G</td>
-                    <td class="tg-baqh p1">G</td>
-                    <td class="tg-baqh p2">G</td>
+                    <!-- <td class="tg-baqh p1">G</td>
+                    <td class="tg-baqh p2">G</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">M</td>
                     <td class="tg-baqh">ŋ</td>
                     <td class="tg-baqh">ng</td>
                     <td class="tg-baqh">M</td>
-                    <td class="tg-baqh p1">M</td>
-                    <td class="tg-baqh p2">M</td>
+                    <!-- <td class="tg-baqh p1">M</td>
+                    <td class="tg-baqh p2">M</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">h</td>
                     <td class="tg-baqh">x</td>
                     <td class="tg-baqh">h</td>
                     <td class="tg-baqh">h</td>
-                    <td class="tg-baqh p1">h</td>
-                    <td class="tg-baqh p2">h</td>
+                    <!-- <td class="tg-baqh p1">h</td>
+                    <td class="tg-baqh p2">h</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">H</td>
                     <td class="tg-baqh">ɣ</td>
                     <td class="tg-baqh">hh</td>
                     <td class="tg-baqh">H</td>
-                    <td class="tg-baqh p1">H</td>
-                    <td class="tg-baqh p2">H</td>
+                    <!-- <td class="tg-baqh p1">H</td>
+                    <td class="tg-baqh p2">H</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">j</td>
                     <td class="tg-baqh">tɕ</td>
                     <td class="tg-baqh">j</td>
                     <td class="tg-baqh">j</td>
-                    <td class="tg-baqh p1">j</td>
-                    <td class="tg-baqh p2">j</td>
+                    <!-- <td class="tg-baqh p1">j</td>
+                    <td class="tg-baqh p2">j</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">q</td>
                     <td class="tg-baqh">tɕh</td>
                     <td class="tg-baqh">q</td>
                     <td class="tg-baqh">q</td>
-                    <td class="tg-baqh p1">q</td>
-                    <td class="tg-baqh p2">q</td>
+                    <!-- <td class="tg-baqh p1">q</td>
+                    <td class="tg-baqh p2">q</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">J</td>
                     <td class="tg-baqh">dʑ</td>
                     <td class="tg-baqh">jj</td>
                     <td class="tg-baqh">J</td>
-                    <td class="tg-baqh p1">J</td>
-                    <td class="tg-baqh p2">J</td>
+                    <!-- <td class="tg-baqh p1">J</td>
+                    <td class="tg-baqh p2">J</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">y</td>
                     <td class="tg-baqh">j</td>
                     <td class="tg-baqh">y</td>
                     <td class="tg-baqh">y</td>
-                    <td class="tg-baqh p1">y</td>
-                    <td class="tg-baqh p2">y</td>
+                    <!-- <td class="tg-baqh p1">y</td>
+                    <td class="tg-baqh p2">y</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">x</td>
                     <td class="tg-baqh">ɕ</td>
                     <td class="tg-baqh">x</td>
                     <td class="tg-baqh">x</td>
-                    <td class="tg-baqh p1">x</td>
-                    <td class="tg-baqh p2">x</td>
+                    <!-- <td class="tg-baqh p1">x</td>
+                    <td class="tg-baqh p2">x</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">X</td>
                     <td class="tg-baqh">ʑ</td>
                     <td class="tg-baqh">xx</td>
                     <td class="tg-baqh">X</td>
-                    <td class="tg-baqh p1">X</td>
-                    <td class="tg-baqh p2">X</td>
+                    <!-- <td class="tg-baqh p1">X</td>
+                    <td class="tg-baqh p2">X</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">Q</td>
                     <td class="tg-baqh">q</td>
                     <td class="tg-baqh">gv</td>
                     <td class="tg-baqh">Q</td>
-                    <td class="tg-baqh p1">Q</td>
-                    <td class="tg-baqh p2">Q</td>
+                    <!-- <td class="tg-baqh p1">Q</td>
+                    <td class="tg-baqh p2">Q</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">K</td>
                     <td class="tg-baqh">qh</td>
                     <td class="tg-baqh">kv</td>
                     <td class="tg-baqh">K</td>
-                    <td class="tg-baqh p1">K</td>
-                    <td class="tg-baqh p2">K</td>
+                    <!-- <td class="tg-baqh p1">K</td>
+                    <td class="tg-baqh p2">K</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">F</td>
                     <td class="tg-baqh">ɦ</td>
                     <td class="tg-baqh">vh</td>
                     <td class="tg-baqh">F</td>
-                    <td class="tg-baqh p1">F</td>
-                    <td class="tg-baqh p2">F</td>
+                    <!-- <td class="tg-baqh p1">F</td>
+                    <td class="tg-baqh p2">F</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">v</td>
                     <td class="tg-baqh">χ</td>
                     <td class="tg-baqh">v</td>
                     <td class="tg-baqh">v</td>
-                    <td class="tg-baqh p1">v</td>
-                    <td class="tg-baqh p2">v</td>
+                    <!-- <td class="tg-baqh p1">v</td>
+                    <td class="tg-baqh p2">v</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">V</td>
                     <td class="tg-baqh">ʁ</td>
                     <td class="tg-baqh">vv</td>
                     <td class="tg-baqh">V</td>
-                    <td class="tg-baqh p1">V</td>
-                    <td class="tg-baqh p2">V</td>
+                    <!-- <td class="tg-baqh p1">V</td>
+                    <td class="tg-baqh p2">V</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">z</td>
                     <td class="tg-baqh">ts</td>
                     <td class="tg-baqh">z</td>
                     <td class="tg-baqh">z</td>
-                    <td class="tg-baqh p1">z</td>
-                    <td class="tg-baqh p2">z</td>
+                    <!-- <td class="tg-baqh p1">z</td>
+                    <td class="tg-baqh p2">z</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">c</td>
                     <td class="tg-baqh">tsh</td>
                     <td class="tg-baqh">c</td>
                     <td class="tg-baqh">c</td>
-                    <td class="tg-baqh p1">c</td>
-                    <td class="tg-baqh p2">c</td>
+                    <!-- <td class="tg-baqh p1">c</td>
+                    <td class="tg-baqh p2">c</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">Z</td>
                     <td class="tg-baqh">dz</td>
                     <td class="tg-baqh">zz</td>
                     <td class="tg-baqh">Z</td>
-                    <td class="tg-baqh p1">Z</td>
-                    <td class="tg-baqh p2">Z</td>
+                    <!-- <td class="tg-baqh p1">Z</td>
+                    <td class="tg-baqh p2">Z</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">s</td>
                     <td class="tg-baqh">s</td>
                     <td class="tg-baqh">s</td>
                     <td class="tg-baqh">s</td>
-                    <td class="tg-baqh p1">s</td>
-                    <td class="tg-baqh p2">s</td>
+                    <!-- <td class="tg-baqh p1">s</td>
+                    <td class="tg-baqh p2">s</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">S</td>
                     <td class="tg-baqh">z</td>
                     <td class="tg-baqh">ss</td>
                     <td class="tg-baqh">S</td>
-                    <td class="tg-baqh p1">S</td>
-                    <td class="tg-baqh p2">S</td>
+                    <!-- <td class="tg-baqh p1">S</td>
+                    <td class="tg-baqh p2">S</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">T</td>
                     <td class="tg-baqh">tʂ</td>
                     <td class="tg-baqh">zh</td>
                     <td class="tg-baqh">T</td>
-                    <td class="tg-baqh p1">T</td>
-                    <td class="tg-baqh p2">T</td>
+                    <!-- <td class="tg-baqh p1">T</td>
+                    <td class="tg-baqh p2">T</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">C</td>
                     <td class="tg-baqh">tʂh</td>
                     <td class="tg-baqh">ch</td>
                     <td class="tg-baqh">C</td>
-                    <td class="tg-baqh p1">C</td>
-                    <td class="tg-baqh p2">C</td>
+                    <!-- <td class="tg-baqh p1">C</td>
+                    <td class="tg-baqh p2">C</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">W</td>
                     <td class="tg-baqh">dʐ</td>
                     <td class="tg-baqh">dh</td>
                     <td class="tg-baqh">W</td>
-                    <td class="tg-baqh p1">W</td>
-                    <td class="tg-baqh p2">W</td>
+                    <!-- <td class="tg-baqh p1">W</td>
+                    <td class="tg-baqh p2">W</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">U</td>
                     <td class="tg-baqh">ʂ</td>
                     <td class="tg-baqh">sh</td>
                     <td class="tg-baqh">U</td>
-                    <td class="tg-baqh p1">U</td>
-                    <td class="tg-baqh p2">U</td>
+                    <!-- <td class="tg-baqh p1">U</td>
+                    <td class="tg-baqh p2">U</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">R</td>
                     <td class="tg-baqh">ʐ</td>
                     <td class="tg-baqh">rr</td>
                     <td class="tg-baqh">R</td>
-                    <td class="tg-baqh p1">R</td>
-                    <td class="tg-baqh p2">R</td>
+                    <!-- <td class="tg-baqh p1">R</td>
+                    <td class="tg-baqh p2">R</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">◌u</td>
                     <td class="tg-baqh">u</td>
                     <td class="tg-baqh">u</td>
                     <td class="tg-baqh">u</td>
-                    <td class="tg-baqh p1">◌u</td>
-                    <td class="tg-baqh p2">◌u</td>
+                    <!-- <td class="tg-baqh p1">◌u</td>
+                    <td class="tg-baqh p2">◌u</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">◌e</td>
                     <td class="tg-baqh">ə</td>
                     <td class="tg-baqh">e</td>
                     <td class="tg-baqh">e</td>
-                    <td class="tg-baqh p1">◌e</td>
-                    <td class="tg-baqh p2">◌e</td>
+                    <!-- <td class="tg-baqh p1">◌e</td>
+                    <td class="tg-baqh p2">◌e</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">◌a</td>
                     <td class="tg-baqh">ɑ</td>
                     <td class="tg-baqh">a</td>
                     <td class="tg-baqh">a</td>
-                    <td class="tg-baqh p1">◌a</td>
-                    <td class="tg-baqh p2">◌a</td>
+                    <!-- <td class="tg-baqh p1">◌a</td>
+                    <td class="tg-baqh p2">◌a</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">i</td>
                     <td class="tg-baqh">ɪ</td>
                     <td class="tg-baqh">i</td>
                     <td class="tg-baqh">i</td>
-                    <td class="tg-baqh p1">i</td>
-                    <td class="tg-baqh p2">i</td>
+                    <!-- <td class="tg-baqh p1">i</td>
+                    <td class="tg-baqh p2">i</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">I</td>
                     <td class="tg-baqh">y</td>
                     <td class="tg-baqh">ü</td>
                     <td class="tg-baqh">I</td>
-                    <td class="tg-baqh p1">I</td>
-                    <td class="tg-baqh p2">I</td>
+                    <!-- <td class="tg-baqh p1">I</td>
+                    <td class="tg-baqh p2">I</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">o</td>
                     <td class="tg-baqh">o</td>
                     <td class="tg-baqh">o</td>
                     <td class="tg-baqh">o</td>
-                    <td class="tg-baqh p1">o</td>
-                    <td class="tg-baqh p2">o</td>
+                    <!-- <td class="tg-baqh p1">o</td>
+                    <td class="tg-baqh p2">o</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">◌A</td>
                     <td class="tg-baqh">æ</td>
                     <td class="tg-baqh">ae</td>
                     <td class="tg-baqh">A</td>
-                    <td class="tg-baqh p1">◌A</td>
-                    <td class="tg-baqh p2">◌A</td>
+                    <!-- <td class="tg-baqh p1">◌A</td>
+                    <td class="tg-baqh p2">◌A</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">◌E</td>
                     <td class="tg-baqh">e</td>
                     <td class="tg-baqh">ea</td>
                     <td class="tg-baqh">E</td>
-                    <td class="tg-baqh p1">◌E</td>
-                    <td class="tg-baqh p2">◌E</td>
+                    <!-- <td class="tg-baqh p1">◌E</td>
+                    <td class="tg-baqh p2">◌E</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">O</td>
                     <td class="tg-baqh">ː</td>
                     <td class="tg-baqh">double letter</td>
                     <td class="tg-baqh">O</td>
-                    <td class="tg-baqh p1">O</td>
-                    <td class="tg-baqh p2">O</td>
+                    <!-- <td class="tg-baqh p1">O</td>
+                    <td class="tg-baqh p2">O</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">O</td>
                     <td class="tg-baqh">ʔ¹</td>
                     <td class="tg-baqh"></td>
                     <td class="tg-baqh">O</td>
-                    <td class="tg-baqh p1">O</td>
-                    <td class="tg-baqh p2">O</td>
+                    <!-- <td class="tg-baqh p1">O</td>
+                    <td class="tg-baqh p2">O</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">r</td>
                     <td class="tg-baqh">ɹ²</td>
                     <td class="tg-baqh">r</td>
                     <td class="tg-baqh">r</td>
-                    <td class="tg-baqh p1">r</td>
-                    <td class="tg-baqh p2">r</td>
+                    <!-- <td class="tg-baqh p1">r</td>
+                    <td class="tg-baqh p2">r</td> -->
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">◌N</td>
                     <td class="tg-baqh">◌̃</td>
                     <td class="tg-baqh">nn</td>
                     <td class="tg-baqh">N</td>
-                    <td class="tg-baqh p1">◌N</td>
-                    <td class="tg-baqh p2">◌N</td>
+                    <!-- <td class="tg-baqh p1">◌N</td>
+                    <td class="tg-baqh p2">◌N</td> -->
                 </tr>
                 <tr>
-                    <td colspan="6"></td>
+                    <td colspan="4"></td>
                 </tr>
                 <tr>
                     <td class="tg-baqh letter">&</td>
                     <td class="tg-baqh">ʐme³</td>
                     <td class="tg-baqh">Rrmea</td>
                     <td class="tg-baqh">&</td>
-                    <td class="tg-baqh p1">&</td>
-                    <td class="tg-baqh p2">&</td>
+                    <!-- <td class="tg-baqh p1">&</td> -->
+                    <!-- <td class="tg-baqh p2">&</td> -->
                 </tr>
             </tbody>
         </table>
@@ -689,23 +693,20 @@
                 </tr>
             </tbody>
         </table>
-        <h2>Test:</h2>
-        <p id="output" class="specimen">sduava seqina?</p>
+        
 
-        <label for="fonts">Font:</label>
+        <!-- <label for="fonts">Font:</label>
         <select name="fonts" id="fontSelection" onchange="changeFont()">
             <option value="volvo">v-zovse</option>
             <option value="saab">v-kana</option>
             <option value="opel">v-ssddes</option>
-        </select>
+        </select> -->
 
-        <textarea id="input" oninput="render()"
-            style="min-width:100%; max-width:100%; box-sizing: border-box; min-height:65px; font-size: 11pt;padding:10px"
-            spellcheck="false" autocapitalize="false">sduava seqina?</textarea>
+        
         <h2>Available fonts:</h2>
-        <a href="font/v-zovse-Regular.otf" style="margin-right:20px;font-size:13pt;font-weight:bold;color:darkslategrey">v-zovse-Regular.otf</a>
+        <a href="font/v-zovse-Regular.ttf" style="margin-right:20px;font-size:13pt;font-weight:bold;color:darkslategrey">v-zovse-Regular.ttf</a>
         <div class="fonts" style="margin-top: 20px; color:darkgray">
-            <div style="margin-right: 5px; ;">Legacy versions: </div>
+            <div style="margin-right: 5px; ;">Legacy fonts: </div>
             <a href="font/v-kana-Regular.otf" style="margin-right:10px; color:darkgray">v-kana-Regular.otf</a>
             <a href="font/v-ssddes-Regular.otf" style="color:darkgray">v-ssddes-Regular.otf</a>
         </div>
