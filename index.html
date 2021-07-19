@@ -26,12 +26,15 @@
         .specimen {
             background-color: #f2f2f2;
             padding: 20px;
-            font-family: v-kana;
-            font-size: 10pt;
+            font-family: v-hlhu;
+            /* font-variation-settings: "wght" 400; */
+            font-size: 11pt;
             color: #333;
-            line-height: 2.2;
+            /* line-height: 1.2; */
         }
-
+        .font {
+            color:darkslategray;
+        }
         .fonts {
             display: grid;
             grid-template-columns: max-content max-content max-content;
@@ -57,7 +60,7 @@
         }
 
         .tg th {
-            background-color: darkslategrey;
+            background-color: var(--accent-color);
             border-color: white;
             border-style: solid;
             border-width: 1px;
@@ -91,28 +94,29 @@
         }
 
         .tg .letter {
-            font-family: v-kana;
+            font-family: v-hlhu;
             font-size: 20pt;
         }
 
         .tg .p1 {
-            font-family: v-kana;
+            font-family: v-hlhu;
             font-size: 16pt;
         }
 
         .tg .p2 {
-            font-family: v-ssddes;
+            font-family: v-hlhu;
             font-size: 16pt;
         }
 
+
         @font-face {
-            font-family: v-zovse;
-            src: url(font/v-zovse-Regular.ttf)
+            font-family: v-hlhu;
+            src: url('font/v-hlhu-Regular.otf');/* format("truetype-variations");*/
         }
 
         @font-face {
             font-family: v-kana;
-            src: url(font/v-kana-Regular.otf)
+            src: url(font/v-vvli-Regular.otf)
         }
 
         @font-face {
@@ -134,17 +138,68 @@
                 row-gap: 10px;
             }
         }
+
+        .title {
+            color: white; 
+        }
+        :root {
+                --dark-text: #ddd;
+                --accent-color: darkslategrey;
+            }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #282828;
+            }
+            p {
+                color: var(--dark-text);
+            }
+            h2 {
+                color: var(--dark-text);
+            }
+            .title {
+                color: var(--dark-text);
+            }
+
+            .specimen {
+                color: var(--dark-text);
+                background-color: #111;
+            }
+
+            textarea {
+                color: var(--dark-text);
+                background-color: #111;
+            }
+
+            .tg td {
+                background-color: #282828;
+                border-color: var(--dark-text);
+                color: var(--dark-text);
+            }
+
+            .note {
+                color:var(--dark-text);
+                /* background-color: ; */
+            }
+
+            .font {
+                color:rgb(21, 131, 125)
+            }
+
+            :root {
+                --accent-color: darkslategrey;
+            }
+        }   
     </style>
 </head>
 
 <body style="margin: 0;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
-    <div style="width: 100%; height: 100px; background-color: darkslategrey;">
+    <div style="width: 100%; height: 100px; background-color: var(--accent-color);">
         <div class="main">
             <!-- header -->
-            <a href="#" style="text-decoration: none; 
-            color: white; 
+            <a class="title" href="#" style="text-decoration: none; 
+            
             font-size: 25px;
-            line-height: 100px;">Qiang Script · <span style="font-family: v-zovse;">& leHS</span></a>
+            line-height: 100px;">Qiang Script · <span style="font-family: v-hlhu;">& leHS</span></a>
             <a id="viewInGithub" href="https://github.com/weijiuqiao/Qiang_script"
                 style="color:darkgrey; line-height:100px;float:right;">View on github</a>
         </div>
@@ -593,7 +648,7 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
                 </tr>
             </tbody>
         </table>
-        <div style="margin-top: 10px;font-family: Arial, Helvetica, sans-serif;font-size: 9pt;">
+        <div class="note" style="margin-top: 10px;font-family: Arial, Helvetica, sans-serif;font-size: 9pt;">
             1: Same character as the long vowel sign. Used when no consonant letter is available for diacritics.<br />
             2: R-coloring of vowels.<br />
             3: This is a special ligature meaning Qiang/Rma.
@@ -643,25 +698,20 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
         </table>
 
 
-        <!-- <label for="fonts">Font:</label>
-        <select name="fonts" id="fontSelection" onchange="changeFont()">
-            <option value="volvo">v-zovse</option>
-            <option value="saab">v-kana</option>
-            <option value="opel">v-ssddes</option>
-        </select> -->
 
 
         <h2>Available fonts:</h2>
-        <a href="font/v-kana-Regular.otf"
-            style="margin-right:20px;font-size:13pt;font-weight:bold;color:darkslategrey">v-kana-Regular.otf</a>
+        <a href="font/v-hlhu-Regular.otf"
+        class="font"
+            style="margin-right:20px;font-size:13pt;font-weight:bold;">v-hlhu-Regular.otf</a>
         <div class="fonts" style="margin-top: 20px; color:darkgray">
             <div style="margin-right: 5px; ;">Legacy fonts: </div>
-            <a href="font/v-zovse-Regular.otf" style="margin-right:10px; color:darkgray">v-zovse-Regular.ttf</a>
+            <a href="font/v-kana-Regular.otf" style="margin-right:10px; color:darkgray">v-kana-Regular.ttf</a>
             <a href="font/v-ssddes-Regular.otf" style="color:darkgray">v-ssddes-Regular.otf</a>
         </div>
 
     </div>
-    <div style="margin-top: 100px; height:300px; background-color: darkslategrey; text-align: center;">
+    <div style="margin-top: 100px; height:300px; background-color: var(--accent-color); text-align: center;">
         <p style="padding-top: 130px;color:white;margin-bottom: 6px;font-size:larger">Qiang Script</p>
         <a href="https://github.com/weijiuqiao/Qiang_script" style="color:darkgrey; font-size:smaller">View on
             github</a>
