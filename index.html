@@ -115,13 +115,8 @@
         }
 
         @font-face {
-            font-family: v-kana;
-            src: url(font/v-vvli-Regular.otf)
-        }
-
-        @font-face {
-            font-family: v-ssddes;
-            src: url(font/v-ssddes-Regular.otf)
+            font-family: v-sul;
+            src: url(font/v-sul-Regular.otf)
         }
 
         @media (max-width: 500px) {
@@ -216,7 +211,8 @@
         </p>
 
         <p>Specimen:</p>
-        <p id="output" class="specimen">sduava seqina?</p>
+        <p class="specimen">sduava seqina?</p>
+        <p class="specimen" style="font-family: v-sul; font-size: 12pt;"></p>
         <p>Type in:</p>
         <textarea id="input" oninput="render()"
             style="min-width:100%; max-width:100%; box-sizing: border-box; min-height:110px; font-size: 11pt;padding:10px"
@@ -704,12 +700,9 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
         <a href="font/v-hlhu-Regular.otf"
         class="font"
             style="margin-right:20px;font-size:13pt;font-weight:bold;">v-hlhu-Regular.otf</a>
-        <div class="fonts" style="margin-top: 20px; color:darkgray">
-            <div style="margin-right: 5px; ;">Legacy fonts: </div>
-            <a href="font/v-kana-Regular.otf" style="margin-right:10px; color:darkgray">v-kana-Regular.ttf</a>
-            <a href="font/v-ssddes-Regular.otf" style="color:darkgray">v-ssddes-Regular.otf</a>
-        </div>
-
+            <a href="font/v-hlhu-Regular.otf"
+        class="font"
+            style="margin-right:20px;font-size:13pt;font-weight:bold;">v-sul-Regular.otf</a>
     </div>
     <div style="margin-top: 100px; height:300px; background-color: var(--accent-color); text-align: center;">
         <p style="padding-top: 130px;color:white;margin-bottom: 6px;font-size:larger">Qiang Script</p>
@@ -718,23 +711,15 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
     </div>
     <script>
         let input = document.getElementById("input");
-        let output = document.getElementById("output");
-        let fontSelection = document.getElementById("fontSelection");
+        let output = Array.from(document.getElementsByClassName("specimen"));
         let reg = new RegExp("\n", "g");
-        output.innerHTML = input.value.replace(reg, "<br/>")
+        output.forEach(element => {
+            element.innerHTML = input.value.replace(reg, "<br/>")
+        }); 
         function render() {
-            output.innerHTML = input.value.replace(reg, "<br/>")
-        }
-        function changeFont() {
-            let idx = fontSelection.selectedIndex;
-            if (idx === 0) {
-                output.style.fontFamily = 'v-zovse'
-            } else if (idx === 1) {
-                output.style.fontFamily = "v-kana"
-            } else {
-                output.style.fontFamily = 'v-ssddes'
-            }
-
+            output.forEach(element => {
+                element.innerHTML = input.value.replace(reg, "<br/>")
+            });
         }
 
 
