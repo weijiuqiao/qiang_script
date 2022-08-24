@@ -98,6 +98,11 @@
             font-size: 20pt;
         }
 
+        .tg .sul {
+            font-family: v-sul;
+            font-size: 14pt;
+        }
+
         .tg .p1 {
             font-family: v-hlhu;
             font-size: 16pt;
@@ -116,7 +121,7 @@
 
         @font-face {
             font-family: v-sul;
-            src: url(font/v-sul-Regular.otf)
+            src: url(font/v-sul-Regular.otf?v=1.2)
         }
 
         @media (max-width: 500px) {
@@ -188,7 +193,7 @@
 </head>
 
 <body style="margin: 0;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
-    <div style="width: 100%; height: 100px; background-color: var(--accent-color);">
+    <div id="title" style="width: 100%; height: 100px; background-color: var(--accent-color);">
         <div class="main">
             <!-- header -->
             <a class="title" href="#" style="text-decoration: none; 
@@ -202,7 +207,7 @@
     <div class="main" style="margin-top: 30px;">
         <p>The Qiang/Rma Script is a newly created script to write the Qiang/Rma language. Qiang/Rma is a Tibeto-Burman
             Language spoken in Sichuan Province of China with around 100,000 ethnic Qiang and Tibetan speakers.</p>
-        <p>The script contains 52 phonetic letters and a couple more punctuation marks (61 characters in total). It is an alphabet with some
+        <p>The script contains 52 phonetic letters and a couple more punctuation marks (62 characters in total). It is an alphabet with some
             characteristics of abugida. The shapes of the letters originally come from an abstract representation of a
             goat head with long curved horns, which is the symbol for Qiang Ethnicity, and its segmentation, rotation
             and other variations. However, out of consideration of legibility as well as aesthetics, the letterforms
@@ -222,7 +227,7 @@ BoOBo lEO DEbi de mimaMe UQu leQei DEbi le.
 DubGRem QuDu dEOge mige Vapenzi devQuarvujiaO Qu Ue,
 Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
 
-        <h2>Letters:</h2>
+        <h2 id="letters">Letters:</h2>
 
         <table class="tg">
             <thead>
@@ -647,9 +652,81 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
         <div class="note" style="margin-top: 10px;font-family: Arial, Helvetica, sans-serif;font-size: 9pt;">
             1: Same character as the long vowel sign. Used when no consonant letter is available for diacritics.<br />
             2: R-coloring of vowels.<br />
-            3: This is a special ligature meaning Qiang/Rma.
+            3: This is a special letter meaning Qiang/Rma that's invariant across dialects.
         </div>
-        <h2>Punctuation marks:</h2>
+        <h2 id="tone">Tone marks:</h2>
+        <p>Many southern Qiang varieties have tones. For now, only the Luobuzhai variety spoken in Wènchuān county has
+            some adoption of this new script. Here are some of its rules in Luobuzhai.</p>
+        <p>One High tone mark is used to write the Luobuzhai variety. Besides it, 
+            the long vowel sign is also used to mark syllables that are rising tone at word-final positions and
+            low tone when followed by suffixes, as vowel length alone does not differentiate words and
+            the rising tone is realized with longer articulation.</p>
+        <p>Other Low tones are left unmarked.</p>
+        <p>In Luobuzhai, within a word, only the first syllable of a continuous block of high-toned syllables is marked with 
+            the High tone mark. The rightward “spread” of the high tone stops when met with a syllable comprising of the long vowel
+            sign (low tone with overt marking).
+        </p>
+        <div style="overflow-x: auto;">
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-rz9m">Mark</th>
+                    <th class="tg-rz9m">Name</th>
+                    <th class="tg-rz9m">Font Mapping</th>
+                    <th class="tg-rz9m">Usage Example</th>
+                    <th class="tg-rz9m">Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-baqh sul">∅</td>
+                    <td class="tg-baqh">No marking for Low tone</td>
+                    <td class="tg-baqh" style="font-size: 20pt;"></td>
+                    <td class="tg-baqh sul">mu</td>
+                    <td class="tg-baqh">/mu(L)/ people</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh sul">◌`</td>
+                    <td class="tg-baqh">High tone mark</td>
+                    <td class="tg-baqh" style="font-size: 20pt;">`</td>
+                    <td class="tg-baqh sul">mu`</td>
+                    <td class="tg-baqh">/mu(H)/ fire</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh sul">O</td>
+                    <td class="tg-baqh">Long vowel sign<br/>Rising/Low tone mark</td>
+                    <td class="tg-baqh">O</td>
+                    <td class="tg-baqh sul">DiEmuO</td>
+                    <td class="tg-baqh">/die(L)mu(R)/ to forget</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh letter"></td>
+                    <td class="tg-baqh"></td>
+                    <td class="tg-baqh"></td>
+                    <td class="tg-baqh sul">mu`ku</td>
+                    <td class="tg-baqh">/mu(H)khu(H)/ smoke</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh letter"></td>
+                    <td class="tg-baqh"></td>
+                    <td class="tg-baqh"></td>
+                    <td class="tg-baqh sul">DiEma`muOyE</td>
+                    <td class="tg-baqh">/die(L)mɑ(H)mu(L)je(L)/ (thing) not to forget</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh letter"></td>
+                    <td class="tg-baqh"></td>
+                    <td class="tg-baqh"></td>
+                    <td class="tg-baqh sul">Fama`loOmi` mu</td>
+                    <td class="tg-baqh">/ɦɑ(L)mɑ(H)lo(L)mi(H) mu(L)/ people who don't come down</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="note" style="margin-top: 10px;font-family: Arial, Helvetica, sans-serif;font-size: 9pt;">
+            L: low tone, H: high tone, R: rising tone.
+        </div>
+        </div>
+        <h2 id="punctuation">Punctuation marks:</h2>
         <table class="tg">
             <thead>
                 <tr>
@@ -696,7 +773,7 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
 
 
 
-        <h2>Available fonts:</h2>
+        <h2 id="font">Available fonts:</h2>
         <a href="font/v-hlhu-Regular.otf"
         class="font"
             style="margin-right:20px;font-size:13pt;font-weight:bold;">v-hlhu-Regular.otf</a>
