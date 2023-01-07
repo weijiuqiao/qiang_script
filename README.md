@@ -5,8 +5,7 @@ This is the GitHub repo for [Qiang Script](https://weijiuqiao.github.io/qiang_sc
 If you have any questions, just fire an issue.
 
 # Change log
-### 2022-12-21
-- Changed the sans serif font to [v-surl-Regular.otf](https://github.com/weijiuqiao/qiang_script/raw/main/font/v-surl-Regular.otf)
+### 2023-01-08
+- Changed font to serif font [v-Rma-serif-Regular.otf](https://github.com/weijiuqiao/qiang_script/raw/main/font/v-Rma-serif-Regular.otf)
 ### 2022-08-24
 - Added the ["Tone marks" section](https://weijiuqiao.github.io/qiang_script/#tone), where one new character, the high tone mark, is introduced and brief explanations of its usage in the southern Qiang variety Luobuzhai is given.
-- Updated the [v-sul-Regular.otf](https://github.com/weijiuqiao/qiang_script/raw/main/font/v-sul-Regular.otf) font to accommodate the addition of the new tone mark.
