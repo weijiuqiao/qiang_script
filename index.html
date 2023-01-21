@@ -23,6 +23,10 @@
             margin-top: 70px;
         }
 
+        .rma {
+            font-family: v-rma;
+        }
+
         .specimen {
             background-color: #f2f2f2;
             padding: 20px;
@@ -116,7 +120,7 @@
 
         @font-face {
             font-family: v-rma;
-            src: url('font/v-Rma-serif-Regular.otf');/* format("truetype-variations");*/
+            src: url('font/v-Rma-serif-Regular.otf?v=0.1');/* format("truetype-variations");*/
         }
 
         @media (max-width: 500px) {
@@ -148,7 +152,7 @@
             p {
                 color: var(--dark-text);
             }
-            h2 {
+            h2, h3 {
                 color: var(--dark-text);
             }
             .title {
@@ -559,7 +563,7 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
                     <td class="tg-baqh">eged</td>
                 </tr>
                 <tr>
-                    <td class="tg-baqh letter">◌a</td>
+                    <td class="tg-baqh letter">a</td>
                     <td class="tg-baqh">ɑ</td>
                     <td class="tg-baqh">a</td>
                     <td class="tg-baqh">a</td>
@@ -587,14 +591,14 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
                     <td class="tg-baqh">o</td>
                 </tr>
                 <tr>
-                    <td class="tg-baqh letter">◌A</td>
+                    <td class="tg-baqh letter">A</td>
                     <td class="tg-baqh">æ</td>
                     <td class="tg-baqh">ae</td>
                     <td class="tg-baqh">A</td>
                     <td class="tg-baqh">aemaegv</td>
                 </tr>
                 <tr>
-                    <td class="tg-baqh letter">◌E</td>
+                    <td class="tg-baqh letter">E</td>
                     <td class="tg-baqh">e</td>
                     <td class="tg-baqh">ea</td>
                     <td class="tg-baqh">E</td>
@@ -649,8 +653,14 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
             3: This is a special letter meaning Qiang/Rma that's invariant across dialects.
         </div>
         <h2 id="tone">Tone marks:</h2>
-        <p>Many southern Qiang varieties have tones. For now, only the Luobuzhai variety spoken in Wènchuān county has
-            some adoption of this new script. Here are some of its rules in Luobuzhai.</p>
+        <p>Most southern Qiang varieties have tones, where the High-Low contrast is the prevalent case. The Taoping variety in Li County with 6 tones
+            has the most number of tones found in Qiang.</p>
+        <p>Two tone marks <span class="rma">`</span>(High) and <span class="rma">~</span>(Low), and their interaction with the long vowel sign "<span class="rma">O</span>" (length contrast only in atonal varieties), are expected to write all tones in Qiang.
+        Take for example the syllable <span class="rma">ma</span>/ma/, the following are its possible tonal representations:</br>
+        <span class="rma">ma ma` ma~ ma`~ maO ma`O ma~O ma`~O maO` maO~ maO`~ ma`O` ma`O~ ma`O`~ ma~O` ma~O~ ma~O`~ ma`~O` ma`~O~ ma`~O`~</span></p>
+        <h3>Tone in Luobuzhai</h3>
+        <p>For now, only the Luobuzhai variety spoken in Wenchuan county has
+            some real-life adoption of this new script. Here are some of the rules to write tones in Luobuzhai.</p>
         <p>One High tone mark is used to write the Luobuzhai variety. Besides it,
             the long vowel sign is also used to mark syllables that are rising tone at word-final positions and
             low tone when followed by suffixes, as vowel length alone does not differentiate words and
@@ -680,7 +690,7 @@ Vapenzi Vlo Ravuerda guqI ni RiRgu.</textarea>
                     <td class="tg-baqh">/mu(L)/ people</td>
                 </tr>
                 <tr>
-                    <td class="tg-baqh sul">◌`</td>
+                    <td class="tg-baqh sul">`</td>
                     <td class="tg-baqh">High tone mark</td>
                     <td class="tg-baqh" style="font-size: 20pt;">`</td>
                     <td class="tg-baqh sul">mu`</td>

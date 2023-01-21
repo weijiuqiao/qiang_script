@@ -5,6 +5,8 @@ This is the GitHub repo for [Qiang Script](https://weijiuqiao.github.io/qiang_sc
 If you have any questions, just fire an issue.
 
 # Change log
+### 2023-01-21
+- Added the low tone mark. With the two tone marks (high and low), it's now possible to write all Qiang tones.
 ### 2023-01-08
 - Changed font to serif font [v-Rma-serif-Regular.otf](https://github.com/weijiuqiao/qiang_script/raw/main/font/v-Rma-serif-Regular.otf)
 ### 2022-08-24
