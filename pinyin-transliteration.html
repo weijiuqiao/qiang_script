@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>普通话音节表</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 0.8rem;
+            text-align: center;
+            /* min-width: 1rem; */
+            border: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #343a40;
+            color: white;
+            font-weight: 500;
+            position: -webkit-sticky;
+            position: sticky;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        td:first-child {
+            font-weight: 500;
+            background-color: #e9ecef;
+        }
+        span {
+            font-family: v-rma;
+        }
+        @font-face {
+            font-family: v-rma;
+            src: url('font/v-Rma-sans-Regular.otf?v=0.1');
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;"><h3>羌语尔玛文汉语普通话音节转写对应表</h3></div>
+    <div class="container">
+        <table id="pinyinTable"></table>
+    </div>
+    <div>
+        <p>说明：</p>
+        <p>1. 当羌语拼音与汉语拼音形式不一致时由括号标出。</p>
+        <p>2. 标注声调时，一声不变，二声在主要元音后加高调符<span>`</span>，三声在元音后、鼻韵尾或儿化音尾前加长音符号<span>O</span>，四声在主要元音后加低调符<span>~</span>。</p>
+    </div>
+    <script>
+        const initials = ["", "b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "h", 
+                        "j", "q", "x", "zh", "ch", "sh", "r", "z", "c", "s", "y", "w"];
+        
+        const finals = ["", "a", "o", "e", "i", "u", "ü", "ai", "ei", "ao", "ou", "an",
+                       "en", "ang", "eng", "ong", "er", "ia", "ie", "iao", "iu", "ian", "in",
+                       "iang", "ing", "iong", "ua", "uo", "uai", "ui", "uan", "un",
+                       "uang", "üe", "üan", "ün"];
+        
+                       const examples = {
+    'a': "Oa", 'ba': "ba", 'pa': 'pa', 'ma': 'ma', 'fa': 'fa', 'da': 'da', 'ta': 'ta', 'na': 'na', 'la': 'la', 'ga': 'ga', 'ka': 'ka', 'ha': 'ha', 'zha': 'Ta', 'cha': 'Ca', 'sha': 'Ua', 'za': 'za', 'ca': 'ca', 'sa': 'sa',
+    'ai': 'Oai', 'bai': 'bai', 'pai': 'pai', 'mai': 'mai', 'dai': 'dai', 'tai': 'tai', 'nai': 'nai', 'lai': 'lai', 'gai': 'gai', 'kai': 'kai', 'hai': 'hai', 'zhai': 'Tai', 'chai': 'Cai', 'shai': 'Uai', 'zai': 'zai', 'cai': 'cai', 'sai': 'sai',
+    'an': 'OAn', 'ban': 'bAn', 'pan': 'pAn', 'man': 'mAn', 'fan': 'fAn', 'dan': 'dAn', 'tan': 'tAn', 'nan': 'nAn', 'lan': 'lAn', 'gan': 'gAn', 'kan': 'kAn', 'han': 'hAn', 'zhan': 'TAn', 'chan': 'CAn', 'shan': 'UAn', 'ran': 'RAn', 'zan': 'zAn', 'can': 'cAn', 'san': 'sAn',
+    'ang': 'OaM', 'bang': 'baM', 'pang': 'paM', 'mang': 'maM', 'fang': 'faM', 'dang': 'daM', 'tang': 'taM', 'nang': 'naM', 'lang': 'laM', 'gang': 'gaM', 'kang': 'kaM', 'hang': 'haM', 'zhang': 'TaM', 'chang': 'CaM', 'shang': 'UaM', 'rang': 'RaM', 'zang': 'zaM', 'cang': 'caM', 'sang': 'saM',
+    'ao': 'Oau', 'bao': 'bau', 'pao': 'pau', 'mao': 'mau', 'dao': 'dau', 'tao': 'tau', 'nao': 'nau', 'lao': 'lau', 'gao': 'gau', 'kao': 'kau', 'hao': 'hau', 'zhao': 'Tau', 'chao': 'Cau', 'shao': 'Uau', 'rao': 'Rau', 'zao': 'zau', 'cao': 'cau', 'sao': 'sau',
+    'e': 'Oe', 'me': 'me', 'de': 'de', 'te': 'te', 'ne': 'ne', 'le': 'le', 'ge': 'ge', 'ke': 'ke', 'he': 'he', 'zhe': 'Te', 'che': 'Ce', 'she': 'Ue', 're': 'Re', 'ze': 'ze', 'ce': 'ce', 'se': 'se',
+    'ei': 'Oei', 'bei': 'bei', 'pei': 'pei', 'mei': 'mei', 'fei': 'fei', 'dei': 'dei', 'nei': 'nei', 'lei': 'lei', 'gei': 'gei', 'hei': 'hei', 'shei': 'Uei', 'zei': 'zei',
+    'en': 'OEn', 'ben': 'bEn', 'pen': 'pEn', 'men': 'mEn', 'fen': 'fEn', 'den': 'dEn', 'nen': 'nEn', 'gen': 'gEn', 'ken': 'kEn', 'hen': 'hEn', 'zhen': 'TEn', 'chen': 'CEn', 'shen': 'UEn', 'ren': 'REn', 'zen': 'zEn', 'cen': 'cEn', 'sen': 'sEn',
+    'eng': 'OeM', 'beng': 'beM', 'peng': 'peM', 'meng': 'meM', 'feng': 'feM', 'deng': 'deM', 'teng': 'teM', 'neng': 'neM', 'leng': 'leM', 'geng': 'geM', 'keng': 'keM', 'heng': 'heM', 'zheng': 'TeM', 'cheng': 'CeM', 'sheng': 'UeM', 'reng': 'ReM', 'zeng': 'zeM', 'ceng': 'ceM', 'seng': 'seM',
+    'er': 'Oer',
+    'i': 'i', 'yi': 'yi', 'bi': 'bi', 'pi': 'pi', 'mi': 'mi', 'di': 'di', 'ti': 'ti', 'ni': 'ni', 'li': 'li', 'ji': 'ji', 'qi': 'qi', 'xi': 'xi', 'zhi': 'Ti', 'chi': 'Ci', 'shi': 'Ui', 'ri': 'Ri', 'zi': 'zi', 'ci': 'ci', 'si': 'si',
+    'ia': 'ia', 'ya': 'ya', 'dia': 'dia', 'lia': 'lia', 'jia': 'ja', 'qia': 'qa', 'xia': 'xa',
+    'ian': 'iAn', 'yan': 'yAn', 'bian': 'biAn', 'pian': 'piAn', 'mian': 'miAn', 'dian': 'diAn', 'tian': 'tiAn', 'nian': 'niAn', 'lian': 'liAn', 'jian': 'jAn', 'qian': 'qAn', 'xian': 'xAn',
+    'iang': 'iaM', 'yang': 'yaM', 'niang': 'niaM', 'liang': 'liaM', 'jiang': 'jaM', 'qiang': 'qaM', 'xiang': 'xaM',
+    'iao': 'iau', 'yao': 'yau', 'biao': 'biau', 'piao': 'piau', 'miao': 'miau', 'diao': 'diau', 'tiao': 'tiau', 'niao': 'niau', 'liao': 'liau', 'jiao': 'jau', 'qiao': 'qau', 'xiao': 'xau',
+    'ie': 'iE', 'ye': 'yE', 'bie': 'biE', 'pie': 'piE', 'mie': 'miE', 'die': 'diE', 'tie': 'tiE', 'nie': 'niE', 'lie': 'liE', 'jie': 'jE', 'qie': 'qE', 'xie': 'xE',
+    'in': 'in', 'yin': 'yin', 'bin': 'bin', 'pin': 'pin', 'min': 'min', 'nin': 'nin', 'lin': 'lin', 'jin': 'jin', 'qin': 'qin', 'xin': 'xin',
+    'ing': 'iM', 'ying': 'yiM', 'bing': 'biM', 'ping': 'piM', 'ming': 'miM', 'ding': 'diM', 'ting': 'tiM', 'ning': 'niM', 'ling': 'liM', 'jing': 'jiM', 'qing': 'qiM', 'xing': 'xiM',
+    'io': 'io', 'yo': 'yo',
+    'iong': 'ioM', 'yong': 'yoM', 'jiong': 'joM', 'qiong': 'qoM', 'xiong': 'xoM',
+    'iu': 'ieu', 'you': 'yeu', 'miu': 'mieu', 'diu': 'dieu', 'niu': 'nieu', 'liu': 'lieu', 'jiu': 'jeu', 'qiu': 'qeu', 'xiu': 'xeu',
+    'o': 'o', 'bo': 'bo', 'po': 'po', 'mo': 'mo', 'fo': 'fo', 'lo': 'lo',
+    'ong': 'oM', 'weng': 'weM', 'dong': 'doM', 'tong': 'toM', 'nong': 'noM', 'long': 'loM', 'gong': 'goM', 'kong': 'koM', 'hong': 'hoM', 'zhong': 'ToM', 'chong': 'CoM', 'rong': 'RoM', 'zong': 'zoM', 'cong': 'coM', 'song': 'soM',
+    'ou': 'Oeu', 'pou': 'peu', 'mou': 'meu', 'fou': 'feu', 'dou': 'deu', 'tou': 'teu', 'nou': 'neu', 'lou': 'leu', 'gou': 'geu', 'kou': 'keu', 'hou': 'heu', 'zhou': 'Teu', 'chou': 'Ceu', 'shou': 'Ueu', 'rou': 'Reu', 'zou': 'zeu', 'cou': 'ceu', 'sou': 'seu',
+    'u': 'Ou', 'wu': 'wu', 'bu': 'bu', 'pu': 'pu', 'mu': 'mu', 'fu': 'fu', 'du': 'du', 'tu': 'tu', 'nu': 'nu', 'lu': 'lu', 'gu': 'gu', 'ku': 'ku', 'hu': 'hu', 'zhu': 'Tu', 'chu': 'Cu', 'shu': 'Uu', 'ru': 'Ru', 'zu': 'zu', 'cu': 'cu', 'su': 'su',
+    'ua': 'Oua', 'wa': 'wa', 'gua': 'gua', 'kua': 'kua', 'hua': 'hua', 'zhua': 'Tua', 'shua': 'Uua',
+    'uai': 'Ouai', 'wai': 'wai', 'guai': 'guai', 'kuai': 'kuai', 'huai': 'huai', 'chuai': 'Cuai', 'shuai': 'Uuai',
+    'uan': 'OuAn', 'wan': 'wAn', 'duan': 'duAn', 'tuan': 'tuAn', 'nuan': 'nuAn', 'luan': 'luAn', 'guan': 'guAn', 'kuan': 'kuAn', 'huan': 'huAn', 'zhuan': 'TuAn', 'chuan': 'CuAn', 'shuan': 'UuAn', 'ruan': 'RuAn', 'zuan': 'zuAn', 'cuan': 'cuAn', 'suan': 'suAn',
+    'uang': 'OuaM', 'wang': 'waM', 'guang': 'guaM', 'kuang': 'kuaM', 'huang': 'huaM', 'zhuang': 'TuaM', 'chuang': 'CuaM', 'shuang': 'UuaM',
+    'ue': 'IE', 'üe':'IE', 'yüe': 'yIE', 'nüe': 'nIE', 'lüe': 'lIE', 'jüe': 'jIE', 'qüe': 'qIE', 'xüe': 'xIE',
+    'ui': 'Ouei', 'wei': 'wei', 'dui': 'duei', 'tui': 'tuei', 'gui': 'guei', 'kui': 'kuei', 'hui': 'huei', 'zhui': 'Tuei', 'chui': 'Cuei', 'shui': 'Uuei', 'rui': 'Ruei', 'zui': 'zuei', 'cui': 'cuei', 'sui': 'suei',
+    'un': 'OuEn', 'wen': 'wEn', 'dun': 'duEn', 'tun': 'tuEn', 'lun': 'luEn', 'gun': 'guEn', 'kun': 'kuEn', 'hun': 'huEn', 'zhun': 'TuEn', 'chun': 'CuEn', 'shun': 'UuEn', 'run': 'RuEn', 'zun': 'zuEn', 'cun': 'cuEn', 'sun': 'suEn',
+    'uo': 'Ouo', 'wo': 'wo', 'duo': 'duo', 'tuo': 'tuo', 'nuo': 'nuo', 'luo': 'luo', 'guo': 'guo', 'kuo': 'kuo', 'huo': 'huo', 'zhuo': 'Tuo', 'chuo': 'Cuo', 'shuo': 'Uuo', 'ruo': 'Ruo', 'zuo': 'zuo', 'cuo': 'cuo', 'suo': 'suo',
+    'ü' : 'I', 'yü': 'yI', 'nü': 'nI', 'lü': 'lI', 'jü': 'jI', 'qü': 'qI', 'xü': 'xI',
+    'üan': 'IAn', 'yüan': 'yIAn', 'jüan': 'jIAn', 'qüan': 'qIAn', 'xüan': 'xIAn',
+    'ün': 'In', 'yün': 'yIn', 'jün': 'jIn', 'qün': 'qIn', 'xün': 'xIn',
+};
+        function toQiangPinyin(rma) {
+            [['A', 'ae'], ['C', 'ch'], ['E', 'ea'], ['I', 'ü'], ['M', 'ng'], ['O', ''], ['R', 'rr'], ['T', 'zh'], ['U', 'sh']].forEach(([rm, py]) => rma = rma.replace(rm, py))
+            return rma
+        }
+
+        function createTable() {
+            const table = document.getElementById('pinyinTable');
+            let html = '<tr><th></th>';
+            
+            // 创建表头（韵母）
+            initials.forEach(f => (html += `<th>${f}</th>`));
+            html += '</tr>';
+
+            // 创建表格主体
+            finals.forEach(final => {
+                if (!final) return;
+                html += `<tr><td>${final}</td>`;
+                initials.forEach(initial => {
+                    // if (!initial) return;
+                    const syllable = initial + final;//;
+                    const rm = examples[syllable];
+                    const rmpy = rm ? toQiangPinyin(rm) : undefined;
+                    const deyuSyllable = (initial==='j'||initial==='q'||initial==='x'||initial==='y' ? syllable.replace('ü', 'u') : syllable)
+                    html += rm
+                        ? `<td>${deyuSyllable}<br/><span>${rm}</span>${deyuSyllable===rmpy?"":`<br/>(${rmpy})`}</td>`
+                        : '<td></td>';
+                });
+                html += '</tr>';
+            });
+
+            table.innerHTML = html;
+        }
+
+        window.onload = createTable;
+    </script>
+</body>
+</html>
